@@ -2,9 +2,45 @@ body {
     background: #f5f5eb;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5%;
+}
+
+h1 {
+    border-bottom: solid #d5dbe3;
+    line-height: 2.5;
+}
+
 .accordion {
-    display: block;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    padding: 1% 0;
+    border-bottom: solid #d5dbe3;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.toggle-button {
+    background-image: url(./media/xmark-solid.svg);
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
 }
 
 .accordion input {
@@ -19,7 +55,14 @@ body {
     transition: height 1s, opacity 0.1s ease-out;
 }
 
+.accordion-panel img {
+    max-width: 100%;
+}
+
 input:checked + .accordion-panel, .accordion:hover > .accordion-panel {
+    display: flex;
+    justify-content: center;
     height: auto;
+    padding: 3% 0;
     opacity: 1;
 }
