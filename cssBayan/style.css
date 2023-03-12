@@ -1,0 +1,25 @@
+body {
+    background: #f5f5eb;
+}
+
+.accordion {
+    display: block;
+    cursor: pointer;
+}
+
+.accordion input {
+    height: 0;
+    width: 0;
+}
+
+.accordion-panel {
+    display: block;
+    height: 0;
+    opacity: 0;
+    transition: height 1s, opacity 0.1s ease-out;
+}
+
+input:checked + .accordion-panel, .accordion:hover > .accordion-panel {
+    height: auto;
+    opacity: 1;
+}
