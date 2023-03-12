@@ -1,0 +1,106 @@
+body {
+    background: #f5f5eb;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5%;
+}
+
+h1 {
+    border-bottom: solid #d5dbe3;
+    line-height: 2.5;
+}
+
+.accordion-wrapper:hover .toggle-button {
+    visibility: visible;
+}
+
+.accordion-wrapper:hover .heading {
+    color: #000;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1% 0;
+    border-bottom: solid #d5dbe3;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #0059d9;
+}
+
+.heading span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.toggle-button {
+    visibility: hidden;
+    background-image: url(./media/xmark-solid.svg);
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    transform: rotate(45deg);
+}
+
+.accordion input {
+    height: 0;
+    width: 0;
+}
+
+.accordion-panel {
+    display: block;
+    height: 0;
+    opacity: 0;
+    transition: height 1s, opacity 0.1s ease-out;
+}
+
+.accordion-panel img {
+    max-width: 100%;
+}
+
+input:checked + .accordion-panel, .accordion:hover > .accordion-panel {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 3% 0;
+    opacity: 1;
+}
+
+input:checked ~ .heading, input:active ~ .heading, .accordion:hover .heading, .accordion:active .heading  {
+    color: #0059d9;
+}
+
+input:checked ~ .toggle-button, input:active ~ .toggle-button, .accordion:hover .toggle-button, .accordion:active .toggle-button  {
+    transform: rotate(0deg);
+    filter:contrast(100)
+}
+
+@media only screen and (min-width: 768px) {
+    .heading span {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .heading span {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .heading span {
+        font-size: 1.5rem;
+    }
+}
